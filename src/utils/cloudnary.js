@@ -24,4 +24,4 @@ const uploadOnCloudnty = async (localFilePath)=>{
     }
 }
 
-export  {uploadOnCloudnty}
+export  { uploadOnCloudnty }
