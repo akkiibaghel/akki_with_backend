@@ -4,7 +4,6 @@ import {User} from '../models/user.model.js'
 import { uploadOnCloudnty } from '../utils/cloudnary.js';
 import { ApiResponce } from '../utils/ApiResponce.js';
 import jwt from 'jsonwebtoken';
-import { compare } from 'bcrypt';
 
 const generateAccessAndRefreshToken = async (userId)=>{
     try {
@@ -55,8 +54,6 @@ const registerUser = asyncHandler( async(req, res) =>{
     }
     const avatarLocalPath = req.files?.avatar[0]?.path
     // console.log(avatarLocalPath);
-
-    // const coverLocalPath = req.files?.coverImage[0]?.path
 
     let coverImageLocalPath;
     if (req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0) {
@@ -232,4 +229,3 @@ export { registerUser ,
     logoutUser,
     refreshAccessToken,
     
-}
